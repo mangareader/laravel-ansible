@@ -3,7 +3,7 @@
 ## Quick Installation
 `composer install`
 ## Config .env
-`APP_ENV=local
+```APP_ENV=local
  APP_DEBUG=true
  APP_KEY=appkey
 
@@ -15,7 +15,7 @@
  CACHE_DRIVER=file
  SESSION_DRIVER=file
  QUEUE_DRIVER=database
-`
+```
 ## Config storage/roles/callback_plugins/human_log.py
 `url="http://test.com/jobs/run/"`
 ## Install DB
