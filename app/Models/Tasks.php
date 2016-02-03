@@ -61,13 +61,18 @@ class Tasks extends Model
         $job->tid = $request->tid;
         $job->vars = $request->vars;
         $job->sudo = $request->sudo;
+        $job->hosts = $request->hosts;
         $job->save();
 
         $pid = $job->id;
 
         $vars = json_decode($job->vars);
         file_put_contents(storage_path("roles/inv$pid"), $inv->content);
-        file_put_contents(storage_path("roles/yml$pid"), View::make("jobs.yml", compact("job", "pid", "vars"))->render());
+        file_put_contents
+        (
+            storage_path("roles/yml$pid"),
+            View::make("jobs.yml", compact("job", "pid", "vars"))->render()
+        );
         file_put_contents(storage_path("tmp/log" . $pid . ".txt"), "");
 
         dispatch(new runAnsible($job->id));

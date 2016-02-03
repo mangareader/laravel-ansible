@@ -1,5 +1,5 @@
 @extends("master")
-
+@section("title") Job #{{ $id }} - @parent @stop
 @section("content")
     <div class="col-xs-12">
         <div class="box box-success">

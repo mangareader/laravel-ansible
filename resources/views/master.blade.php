@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Document</title>
+    <title>@section('title') Ansbile @show</title>
     <link rel="stylesheet" href="{{ url("/") }}/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ url("/") }}/css/AdminLTE.min.css">
@@ -17,7 +17,7 @@
         <nav class="navbar navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="../../index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+                    <a href="{{ url("/") }}" class="navbar-brand"><b>Ansible</b>Admin</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#navbar-collapse">
                         <i class="fa fa-bars"></i>

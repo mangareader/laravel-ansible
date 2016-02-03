@@ -1,4 +1,4 @@
-- hosts : all
+- hosts : {{ $job->hosts }}
   sudo: {{ $job->sudo?"yes":"no" }}
   vars:
     pid: {{ $pid }}

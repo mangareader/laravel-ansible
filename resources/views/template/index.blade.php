@@ -1,5 +1,5 @@
 @extends("master")
-
+@section("title") Templates - @parent @stop
 @section("content")
     <div class="col-xs-12">
         <div class="box box-success">
@@ -35,7 +35,11 @@
                     @foreach($templates as $inv)
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td>{{ $inv->name }}</td>
+                            <td>
+                                <a href="{{ route("template_edit",["id"=>$inv->id]) }}">
+                                    {{ $inv->name }}
+                                </a>
+                            </td>
                             <td>{{ $inv->updated_at }}</td>
                             <td>{{ $inv->created_at }}</td>
                             <td>

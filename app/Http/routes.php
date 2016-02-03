@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::post("/run/{id}", "IndexController@test_post");
 Route::post("/jobs/run/{id}", "JobsController@run_post")->where('id', '[0-9]+');
@@ -29,6 +26,7 @@ Route::post("/jobs/run/{id}", "JobsController@run_post")->where('id', '[0-9]+');
 */
 
 Route::group(['middleware' => ['web']], function () {
+    Route::get("/", "InvenController@index");
     Route::get("/inventories", "InvenController@index")->name("inventories");
     Route::get("/inventories/add", "InvenController@add")->name("inventories_add");
     Route::post("/inventories/add", "InvenController@add_post");

@@ -13,6 +13,12 @@ class CallbackModule(object):
     def playbook_on_task_start(self, name, is_conditional):
         requests.post(url+str(pid),
             data = {"tname":name,"name":"task_start"})
+    def runner_on_no_hosts(self):
+		requests.post(url+str(pid),
+            data = {"name":"no_hosts"})
+    def playbook_on_no_hosts_matched(self):
+		requests.post(url+str(pid),
+            data = {"name":"no_hosts_matched"})
     def runner_on_unreachable(self, host, res):
 		requests.post(url+str(pid),
             data = {"host":host,"name":"unreachable","res":res})

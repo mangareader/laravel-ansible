@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration
             $table->integer('iid');
             $table->integer('tid');
             $table->text('vars');
+            $table->text('hosts');
             $table->boolean('sudo')->default(0);
             $table->integer('status')->default(0);
             $table->text("content");

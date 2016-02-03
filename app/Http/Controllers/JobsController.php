@@ -19,7 +19,7 @@ class JobsController extends Controller
 {
     public function index()
     {
-        $tasks = Tasks::orderBy('id', 'desc')->paginate(12);
+        $tasks = Tasks::orderBy('id', 'desc')->paginate(10);
         $invs = Inventories::select("name", "id")->get();
         $templates = Templates::select("name", "id")->get();
         return view("jobs.index", compact("invs", "templates", "tasks"));
@@ -37,6 +37,7 @@ class JobsController extends Controller
             'iid' => 'required',
             'tid' => 'required',
             'sudo' => 'required',
+            'hosts' => 'required',
             'vars' => 'required',
         ]);
 

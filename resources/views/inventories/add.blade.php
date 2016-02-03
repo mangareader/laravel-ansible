@@ -1,5 +1,12 @@
 @extends("master")
-
+@section("title")
+    @if(isset($inv))
+        Edit Inventories
+    @else
+        Add Inventories
+    @endif
+    - @parent
+@stop
 @section("content")
     <div class="col-xs-12">
         <div class="box box-success">

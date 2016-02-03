@@ -1,5 +1,5 @@
 @extends("master")
-
+@section("title") {{ isset($template)?"Edit ":"Add " }}Template Job - @parent @stop
 @section("content")
     <div class="col-xs-12">
         <div class="box box-success">

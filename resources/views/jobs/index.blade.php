@@ -1,5 +1,5 @@
 @extends("master")
-
+@section("title") Jobs - @parent @stop
 @section("content")
     <div class="col-xs-6">
         <div class="box box-success">
@@ -81,6 +81,13 @@
                                 <option value="0">No</option>
                                 <option value="1">Yes</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Hosts</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="hosts" class="form-control" value="all">
                         </div>
                     </div>
                     <div class="form-group">

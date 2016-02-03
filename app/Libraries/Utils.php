@@ -48,6 +48,12 @@ class Utils
                 $msg .= str_pad("PLAY [$request->pname] ", 90, "*") . "\n\n\n";
                 $msg .= str_pad("GATHERING FACTS ", 90, "*") . "\n";
                 break;
+            case "no_hosts":
+                $msg .= self::print_pre("no hosts", self::PRE_INFO);
+                break;
+            case "no_hosts_matched":
+                $msg .= self::print_pre("no hosts matched", self::PRE_INFO);
+                break;
             case "task_start":
                 $msg .= str_pad("\nTASK: [$request->tname] ", 90, "*") . "\n";
                 break;
